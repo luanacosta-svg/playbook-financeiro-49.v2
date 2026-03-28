@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playbook Financeiro — 49 Educação</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+#pb49 {
+  font-family: 'Inter', sans-serif;
+  background: #07070f;
+  color: #e2e8f0;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+#pb49 * {
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* ── VARIABLES ── */
+#pb49 {
+  --orange: #f97316;
+  --gold: #f59e0b;
+  --grad: linear-gradient(135deg, #f97316, #f59e0b);
+  --bg: #07070f;
+  --card: #111120;
+  --card2: #0d0d1a;
+  --border: rgba(255,255,255,0.07);
+  --border-orange: rgba(249,115,22,0.3);
+  --text: #e2e8f0;
+  --muted: #8b9ab0;
+  --radius: 14px;
+}
+
+/* ── NAVBAR ── */
+.pb-nav {
+  background: rgba(7,7,15,0.97) !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 0 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 64px !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+.pb-logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+}
+
+.pb-logo-mark {
+  font-size: 24px !important;
+  font-weight: 900 !important;
+  background: var(--grad) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  letter-spacing: -1px !important;
+}
+
+.pb-logo-sub {
+  font-size: 13px !important;
+  color: #e2e8f0 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.5px !important;
+}
+
+.pb-nav-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.pb-nav-btn {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid var(--border) !important;
+  color: #e2e8f0 !important;
+  padding: 7px 14px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  text-decoration: none !important;
+  transition: all 0.15s !important;
+}
+
+.pb-nav-btn:hover {
+  background: rgba(249,115,22,0.12) !important;
+  border-color: var(--border-orange) !important;
+  color: var(--orange) !important;
+}
+
+.pb-nav-btn.active {
+  background: rgba(249,115,22,0.15) !important;
+  border-color: var(--orange) !important;
+  color: var(--orange) !important;
+}
+
+.pb-badge {
+  background: rgba(249,115,22,0.15) !important;
+  color: var(--orange) !important;
+  border: 1px solid var(--border-orange) !important;
+  padding: 4px 10px !important;
+  border-radius: 20px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+}
+
+/* ── PAGES ── */
+.pb-page { display: none !important; }
+.pb-page.pb-active { display: block !important; }
+
+/* ── QUICK ACTIONS ── */
+.pb-quick {
+  background: var(--card) !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 14px 32px !important;
+  display: flex !important;
+  gap: 10px !important;
+  align-items: center !important;
+  overflow-x: auto !important;
+}
+
+.pb-quick-label {
+  font-size: 11px !important;
+  color: var(--muted) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  white-space: nowrap !important;
+  margin-right: 6px !important;
+}
+
+.pb-quick-btn {
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid var(--border) !important;
+  color: #e2e8f0 !important;
+  padding: 7px 14px !important;
+  border-radius: 8px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.15s !important;
+}
+
+.pb-quick-btn:hover {
+  background: rgba(249,115,22,0.1) !important;
+  border-color: var(--border-orange) !important;
+  color: var(--orange) !important;
+}
+
+/* ── MAIN CONTAINER ── */
+.pb-main {
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 48px 32px 80px !important;
+}
+
+/* ── HERO ── */
+.pb-hero {
+  margin-bottom: 56px !important;
+}
+
+.pb-hero-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: var(--orange) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  margin-bottom: 20px !important;
+}
+
+.pb-hero-tag::before {
+  content: '' !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: var(--orange) !important;
+  display: inline-block !important;
+  animation: pulse 2s infinite !important;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.pb-hero h1 {
+  font-size: 52px !important;
+  font-weight: 900 !important;
+  line-height: 1.1 !important;
+  color: #fff !important;
+  letter-spacing: -2px !important;
+  margin-bottom: 20px !important;
+}
+
+.pb-grad-text {
+  background: var(--grad) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.pb-hero-sub {
+  font-size: 17px !important;
+  color: var(--muted) !important;
+  max-width: 620px !important;
+  margin-bottom: 32px !important;
+  line-height: 1.7 !important;
+}
+
+.pb-hero-meta {
+  display: flex !important;
+  gap: 24px !important;
+  flex-wrap: wrap !important;
+}
+
+.pb-meta-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 13px !important;
+  color: var(--muted) !important;
+}
+
+.pb-meta-item strong {
+  color: #e2e8f0 !important;
+  font-weight: 600 !important;
+}
+
+/* ── SECTION HEADER ── */
+.pb-section {
+  margin-bottom: 52px !important;
+}
+
+.pb-section-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  margin-bottom: 24px !important;
+}
+
+.pb-section-label {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: var(--orange) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+}
+
+.pb-section-title {
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  color: #fff !important;
+  letter-spacing: -0.5px !important;
+}
+
+.pb-divider {
+  height: 1px !important;
+  background: var(--border) !important;
+  margin-bottom: 52px !important;
+}
+
+/* ── PIPELINE ── */
+.pb-pipeline {
+  display: flex !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  overflow-x: auto !important;
+  padding-bottom: 4px !important;
+}
+
+.pb-pipe-step {
+  flex: 1 !important;
+  min-width: 120px !important;
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-right: none !important;
+  padding: 20px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-align: center !important;
+  position: relative !important;
+}
+
+.pb-pipe-step:first-child { border-radius: var(--radius) 0 0 var(--radius) !important; }
+.pb-pipe-step:last-child { border-right: 1px solid var(--border) !important; border-radius: 0 var(--radius) var(--radius) 0 !important; }
+
+.pb-pipe-step::after {
+  content: '→' !important;
+  position: absolute !important;
+  right: -14px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: var(--orange) !important;
+  font-size: 18px !important;
+  z-index: 2 !important;
+  background: var(--bg) !important;
+  padding: 0 2px !important;
+}
+
+.pb-pipe-step:last-child::after { display: none !important; }
+
+.pb-pipe-num {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  background: var(--grad) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  color: #fff !important;
+  flex-shrink: 0 !important;
+}
+
+.pb-pipe-label {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #e2e8f0 !important;
+  line-height: 1.3 !important;
+}
+
+.pb-pipe-sub {
+  font-size: 11px !important;
+  color: var(--muted) !important;
+  line-height: 1.3 !important;
+}
+
+/* ── TOOLS GRID ── */
+.pb-tools-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+  gap: 14px !important;
+}
+
+.pb-tool-card {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  padding: 20px !important;
+  transition: all 0.2s !important;
+}
+
+.pb-tool-card:hover {
+  border-color: var(--border-orange) !important;
+  background: rgba(249,115,22,0.05) !important;
+  transform: translateY(-2px) !important;
+}
+
+.pb-tool-icon {
+  font-size: 26px !important;
+  margin-bottom: 10px !important;
+  display: block !important;
+}
+
+.pb-tool-name {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  margin-bottom: 4px !important;
+}
+
+.pb-tool-desc {
+  font-size: 12px !important;
+  color: var(--muted) !important;
+  line-height: 1.5 !important;
+}
+
+.pb-tool-tag {
+  display: inline-block !important;
+  margin-top: 10px !important;
+  background: rgba(249,115,22,0.12) !important;
+  color: var(--orange) !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  padding: 3px 8px !important;
+  border-radius: 4px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* ── CALENDAR TABLE ── */
+.pb-cal-table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  font-size: 14px !important;
+}
+
+.pb-cal-table th {
+  background: rgba(249,115,22,0.12) !important;
+  color: var(--orange) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  padding: 12px 16px !important;
+  text-align: left !important;
+  border-bottom: 1px solid var(--border-orange) !important;
+}
+
+.pb-cal-table td {
+  padding: 12px 16px !important;
+  border-bottom: 1px solid var(--border) !important;
+  color: #e2e8f0 !important;
+  font-size: 13px !important;
+  vertical-align: middle !important;
+}
+
+.pb-cal-table tr:hover td {
+  background: rgba(255,255,255,0.02) !important;
+}
+
+.pb-freq-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 4px 10px !important;
+  border-radius: 20px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+}
+
+.freq-diaria { background: rgba(249,115,22,0.15) !important; color: #f97316 !important; border: 1px solid rgba(249,115,22,0.3) !important; }
+.freq-semanal { background: rgba(59,130,246,0.15) !important; color: #60a5fa !important; border: 1px solid rgba(59,130,246,0.3) !important; }
+.freq-mensal { background: rgba(34,197,94,0.15) !important; color: #4ade80 !important; border: 1px solid rgba(34,197,94,0.3) !important; }
+.freq-semestral { background: rgba(168,85,247,0.15) !important; color: #c084fc !important; border: 1px solid rgba(168,85,247,0.3) !important; }
+.freq-pontual { background: rgba(100,116,139,0.15) !important; color: #94a3b8 !important; border: 1px solid rgba(100,116,139,0.3) !important; }
+
+/* ── STEP CARDS ── */
+.pb-steps {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.pb-step-card {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  padding: 20px 24px !important;
+  display: flex !important;
+  gap: 20px !important;
+  align-items: flex-start !important;
+  transition: border-color 0.15s !important;
+}
+
+.pb-step-card:hover { border-color: var(--border-orange) !important; }
+
+.pb-step-num {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: var(--grad) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 15px !important;
+  font-weight: 900 !important;
+  color: #fff !important;
+  flex-shrink: 0 !important;
+}
+
+.pb-step-content {}
+
+.pb-step-title {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  margin-bottom: 4px !important;
+}
+
+.pb-step-desc {
+  font-size: 13px !important;
+  color: var(--muted) !important;
+  line-height: 1.6 !important;
+}
+
+.pb-step-tool {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  margin-top: 8px !important;
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid var(--border) !important;
+  padding: 3px 9px !important;
+  border-radius: 5px !important;
+  font-size: 11px !important;
+  color: var(--muted) !important;
+  font-weight: 500 !important;
+}
+
+/* ── RULES GRID ── */
+.pb-rules-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 14px !important;
+}
+
+.pb-rule-card {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-left: 3px solid var(--orange) !important;
+  border-radius: var(--radius) !important;
+  padding: 18px 20px !important;
+}
+
+.pb-rule-title {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: var(--orange) !important;
+  margin-bottom: 8px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.pb-rule-list {
+  list-style: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+}
+
+.pb-rule-list li {
+  font-size: 13px !important;
+  color: var(--muted) !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  line-height: 1.5 !important;
+}
+
+.pb-rule-list li::before {
+  content: '›' !important;
+  color: var(--orange) !important;
+  font-weight: 700 !important;
+  flex-shrink: 0 !important;
+  margin-top: 1px !important;
+}
+
+/* ── LINKS GRID ── */
+.pb-links-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+  gap: 14px !important;
+}
+
+.pb-link-card {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  padding: 18px 20px !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  transition: all 0.15s !important;
+  cursor: pointer !important;
+}
+
+.pb-link-card:hover {
+  border-color: var(--border-orange) !important;
+  background: rgba(249,115,22,0.05) !important;
+  transform: translateX(4px) !important;
+}
+
+.pb-link-icon {
+  font-size: 24px !important;
+  flex-shrink: 0 !important;
+}
+
+.pb-link-name {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #e2e8f0 !important;
+}
+
+.pb-link-sub {
+  font-size: 12px !important;
+  color: var(--muted) !important;
+  margin-top: 2px !important;
+}
+
+/* ── RÉGUA DE COBRANÇA ── */
+.pb-regua {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  overflow: hidden !important;
+}
+
+.pb-regua-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.pb-regua-row:last-child { border-bottom: none !important; }
+
+.pb-regua-day {
+  min-width: 100px !important;
+  padding: 14px 18px !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  color: var(--orange) !important;
+  background: rgba(249,115,22,0.08) !important;
+  border-right: 1px solid var(--border) !important;
+}
+
+.pb-regua-action {
+  padding: 14px 20px !important;
+  font-size: 13px !important;
+  color: #e2e8f0 !important;
+  flex: 1 !important;
+}
+
+.pb-regua-tool {
+  padding: 14px 16px !important;
+  font-size: 12px !important;
+  color: var(--muted) !important;
+  border-left: 1px solid var(--border) !important;
+  min-width: 140px !important;
+  text-align: right !important;
+}
+
+/* ── FLUXOGRAMA ── */
+.pb-flow {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  align-items: center !important;
+}
+
+.pb-flow-node {
+  background: var(--card) !important;
+  border: 1px solid var(--border-orange) !important;
+  border-radius: var(--radius) !important;
+  padding: 14px 28px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  text-align: center !important;
+  min-width: 280px !important;
+}
+
+.pb-flow-node.start {
+  background: var(--grad) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 800 !important;
+}
+
+.pb-flow-node.decision {
+  background: rgba(249,115,22,0.1) !important;
+  border-color: var(--orange) !important;
+  color: var(--orange) !important;
+}
+
+.pb-flow-arrow {
+  width: 2px !important;
+  height: 28px !important;
+  background: var(--border-orange) !important;
+  margin: 0 auto !important;
+}
+
+.pb-flow-branch {
+  display: flex !important;
+  gap: 40px !important;
+  align-items: flex-start !important;
+}
+
+.pb-flow-branch-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0 !important;
+}
+
+.pb-flow-branch-label {
+  font-size: 11px !important;
+  color: var(--muted) !important;
+  margin-bottom: 6px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* ── INNER PAGES ── */
+.pb-inner-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-bottom: 40px !important;
+  padding-bottom: 24px !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.pb-back-btn {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--muted) !important;
+  padding: 8px 14px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.15s !important;
+}
+
+.pb-back-btn:hover { color: #fff !important; border-color: rgba(255,255,255,0.2) !important; }
+
+.pb-inner-title {
+  font-size: 28px !important;
+  font-weight: 900 !important;
+  color: #fff !important;
+  letter-spacing: -1px !important;
+}
+
+/* ALERT CARD */
+.pb-alert {
+  background: rgba(249,115,22,0.08) !important;
+  border: 1px solid var(--border-orange) !important;
+  border-radius: var(--radius) !important;
+  padding: 16px 20px !important;
+  display: flex !important;
+  gap: 12px !important;
+  align-items: flex-start !important;
+  margin-bottom: 24px !important;
+}
+
+.pb-alert-icon { font-size: 20px !important; flex-shrink: 0 !important; }
+.pb-alert-text { font-size: 13px !important; color: #e2e8f0 !important; line-height: 1.6 !important; }
+.pb-alert-text strong { color: var(--orange) !important; }
+
+/* CHECKLIST */
+.pb-checklist {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.pb-check-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 10px !important;
+  padding: 14px 18px !important;
+  cursor: pointer !important;
+  transition: all 0.15s !important;
+  user-select: none !important;
+}
+
+.pb-check-item:hover { border-color: var(--border-orange) !important; }
+.pb-check-item.checked { background: rgba(34,197,94,0.06) !important; border-color: rgba(34,197,94,0.3) !important; }
+
+.pb-check-box {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 5px !important;
+  border: 2px solid var(--border) !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 12px !important;
+  transition: all 0.15s !important;
+}
+
+.pb-check-item.checked .pb-check-box {
+  background: #22c55e !important;
+  border-color: #22c55e !important;
+}
+
+.pb-check-label {
+  font-size: 14px !important;
+  color: #e2e8f0 !important;
+  flex: 1 !important;
+}
+
+.pb-check-item.checked .pb-check-label {
+  text-decoration: line-through !important;
+  color: var(--muted) !important;
+}
+
+.pb-check-when {
+  font-size: 11px !important;
+  color: var(--muted) !important;
+  background: rgba(255,255,255,0.04) !important;
+  padding: 3px 8px !important;
+  border-radius: 4px !important;
+  white-space: nowrap !important;
+}
+
+/* CATEGORIES */
+.pb-cats-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 14px !important;
+}
+
+.pb-cat-card {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  padding: 20px !important;
+}
+
+.pb-cat-title {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  margin-bottom: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.pb-cat-list {
+  list-style: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+}
+
+.pb-cat-list li {
+  font-size: 13px !important;
+  color: var(--muted) !important;
+  padding: 6px 10px !important;
+  background: rgba(255,255,255,0.03) !important;
+  border-radius: 6px !important;
+  border-left: 2px solid var(--border) !important;
+}
+
+@media (max-width: 768px) {
+  .pb-hero h1 { font-size: 36px !important; }
+  .pb-rules-grid, .pb-cats-grid { grid-template-columns: 1fr !important; }
+  .pb-main { padding: 32px 16px 60px !important; }
+  .pb-nav { padding: 0 16px !important; }
+  .pb-regua-tool { display: none !important; }
+}
+</style>
+</head>
+<body>
+<div id="pb49">
+
+<!-- ═══════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════ -->
+<nav class="pb-nav">
+  <a class="pb-logo" href="#">
+    <span class="pb-logo-mark">49</span>
+    <span class="pb-logo-sub">educação</span>
+  </a>
+  <div class="pb-nav-right">
+    <button class="pb-nav-btn" onclick="showPage('entradas')">💰 Entradas</button>
+    <button class="pb-nav-btn" onclick="showPage('saidas')">💸 Saídas</button>
+    <button class="pb-nav-btn" onclick="showPage('checklist')">✅ Checklist</button>
+    <a class="pb-nav-btn" href="#" target="_blank">📄 Playbook .docx</a>
+    <span class="pb-badge">Interno</span>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: MAIN
+═══════════════════════════════════════════ -->
+<div id="page-main" class="pb-page pb-active">
+
+  <!-- Quick Actions -->
+  <div class="pb-quick">
+    <span class="pb-quick-label">Atalhos</span>
+    <a class="pb-quick-btn" href="#" target="_blank">📊 Planilha Fluxo de Caixa</a>
+    <a class="pb-quick-btn" href="https://www.asaas.com/login" target="_blank">🟠 Asaas</a>
+    <a class="pb-quick-btn" href="https://app.contaazul.com" target="_blank">🔵 Conta Azul</a>
+    <a class="pb-quick-btn" href="#" target="_blank">📁 Drive 49</a>
+    <a class="pb-quick-btn" href="https://onvio.com.br" target="_blank">📬 Onvio</a>
+    <a class="pb-quick-btn" href="https://app.clicksign.com" target="_blank">✍️ ClickSign</a>
+  </div>
+
+  <div class="pb-main">
+
+    <!-- HERO -->
+    <div class="pb-hero">
+      <div class="pb-hero-tag">Documento Interno · Março 2026</div>
+      <h1>Playbook <span class="pb-grad-text">Financeiro</span></h1>
+      <p class="pb-hero-sub">Guia operacional da área financeira da 49 Educação — contas a pagar, a receber, conciliação bancária e fluxo de caixa. Referência para Luana, Rafael e novos colaboradores.</p>
+      <div class="pb-hero-meta">
+        <div class="pb-meta-item">🔄 <span>Atualização <strong>Diária / Semanal</strong></span></div>
+        <div class="pb-meta-item">👥 <span>Equipe <strong>Luana · Rafael</strong></span></div>
+        <div class="pb-meta-item">🛠️ <span>Sistema <strong>Conta Azul + Asaas</strong></span></div>
+        <div class="pb-meta-item">🔄 <span>Migração <strong>Omie → Conta Azul</strong> em andamento</span></div>
+      </div>
+    </div>
+
+    <div class="pb-divider"></div>
+
+    <!-- 1. VISÃO GERAL -->
+    <div class="pb-section">
+      <div class="pb-section-header">
+        <span class="pb-section-label">01</span>
+        <span class="pb-section-title">Visão Geral do Processo</span>
+      </div>
+      <div class="pb-pipeline">
+        <div class="pb-pipe-step">
+          <div class="pb-pipe-num">1</div>
+          <div class="pb-pipe-label">Lançamento</div>
+          <div class="pb-pipe-sub">Registrar no Conta Azul</div>
+        </div>
+        <div class="pb-pipe-step">
+          <div class="pb-pipe-num">2</div>
+          <div class="pb-pipe-label">Pagamento / Cobrança</div>
+          <div class="pb-pipe-sub">Executar via banco ou Asaas</div>
+        </div>
+        <div class="pb-pipe-step">
+          <div class="pb-pipe-num">3</div>
+          <div class="pb-pipe-label">Conciliação</div>
+          <div class="pb-pipe-sub">Cruzar com extrato bancário</div>
+        </div>
+        <div class="pb-pipe-step">
+          <div class="pb-pipe-num">4</div>
+          <div class="pb-pipe-label">Fluxo de Caixa</div>
+          <div class="pb-pipe-sub">Atualizar planilha anual</div>
+        </div>
+        <div class="pb-pipe-step">
+          <div class="pb-pipe-num">5</div>
+          <div class="pb-pipe-label">Fechamento</div>
+          <div class="pb-pipe-sub">Enviar docs ao Onvio</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pb-divider"></div>
+
+    <!-- 2. FERRAMENTAS -->
+    <div class="pb-section">
+      <div class="pb-section-header">
+        <span class="pb-section-label">02</span>
+        <span class="pb-section-title">Stack de Ferramentas</span>
+      </div>
+      <div class="pb-tools-grid">
+        <div class="pb-tool-card">
+          <span class="pb-tool-icon">🔵</span>
+          <div class="pb-tool-name">Conta Azul</div>
+          <div class="pb-tool-desc">ERP financeiro principal. Lançamentos, contas a pagar/receber, conciliação bancária.</div>
+          <span class="pb-tool-tag">Migração em andamento</span>
+        </div>
+        <div class="pb-tool-card">
+          <span class="pb-tool-icon">🟠</span>
+          <div class="pb-tool-name">Asaas</div>
+          <div class="pb-tool-desc">Cobranças e faturamento B2C. Boletos, Pix, NFs, negativação no SERASA.</div>
+          <span class="pb-tool-tag">Diário</span>
+        </div>
+        <div class="pb-tool-card">
+          <span class="pb-tool-icon">📊</span>
+          <div class="pb-tool-name">Planilha Fluxo de Caixa</div>
+          <div class="pb-tool-desc">Projeção financeira anual. Entradas e saídas previstas vs. realizadas.</div>
+          <span class="pb-tool-tag">Semanal</span>
+        </div>
+        <div class="pb-tool-card">
+          <span class="pb-tool-icon">📁</span>
+          <div class="pb-tool-name">Drive 49</div>
+          <div class="pb-tool-desc">Repositório de documentos: NFs, extratos, contratos e fechamento contábil.</div>
+          <span class="pb-tool-tag">Mensal</span>
+        </div>
+        <div class="pb-tool-card">
+          <span class="pb-tool-icon">🏦</span>
+          <div class="pb-tool-name">Bancos</div>
+          <div class="pb-tool-desc">Unicred (principal), Inter e Itaú. Pagamentos, recebimentos e conciliação.</div>
+          <span class="pb-tool-tag">Diário</span>
+        </div>
+        <div class="pb-tool-card">
+          <span class="pb-tool-icon">📬</span>
+          <div class="pb-tool-name">Onvio</div>
+          <div class="pb-tool-desc">Plataforma da contabilidade (contabilidade externa). Envio mensal de documentos.</div>
+          <span class="pb-tool-tag">Mensal</span>
+        </div>
+        <div class="pb-tool-card">
+          <span class="pb-tool-icon">✍️</span>
+          <div class="pb-tool-name">ClickSign</div>
+          <div class="pb-tool-desc">Assinatura digital de contratos com fornecedores e equipe.</div>
+          <span class="pb-tool-tag">Pontual</span>
+        </div>
+        <div class="pb-tool-card">
+          <span class="pb-tool-icon">🌐</span>
+          <div class="pb-tool-name">Registro.br</div>
+          <div class="pb-tool-desc">Controle e renovação de domínios da empresa.</div>
+          <span class="pb-tool-tag">Pontual</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pb-divider"></div>
+
+    <!-- 3. CALENDÁRIO -->
+    <div class="pb-section">
+      <div class="pb-section-header">
+        <span class="pb-section-label">03</span>
+        <span class="pb-section-title">Calendário de Rotinas</span>
+      </div>
+      <table class="pb-cal-table">
+        <thead>
+          <tr>
+            <th>Frequência</th>
+            <th>Tarefa</th>
+            <th>Responsável</th>
+            <th>Ferramenta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="pb-freq-badge freq-diaria">● Diária</span></td><td>Lançar pagamentos e provisionar no banco</td><td>Luana / Rafael</td><td>Conta Azul + Banco</td></tr>
+          <tr><td><span class="pb-freq-badge freq-diaria">● Diária</span></td><td>Lançar recebimentos</td><td>Luana / Rafael</td><td>Conta Azul</td></tr>
+          <tr><td><span class="pb-freq-badge freq-diaria">● Diária</span></td><td>Contatar clientes inadimplentes</td><td>Luana / Rafael</td><td>Asaas</td></tr>
+          <tr><td><span class="pb-freq-badge freq-diaria">● Diária</span></td><td>Conciliação bancária com extrato</td><td>Luana / Rafael</td><td>Conta Azul</td></tr>
+          <tr><td><span class="pb-freq-badge freq-semanal">● Semanal (2ª)</span></td><td>Revisão de contas a pagar da semana</td><td>Luana / Rafael</td><td>Conta Azul + Planilha</td></tr>
+          <tr><td><span class="pb-freq-badge freq-semanal">● Semanal (6ª)</span></td><td>Revisão de contas a receber e inadimplência</td><td>Luana / Rafael</td><td>Asaas + Conta Azul</td></tr>
+          <tr><td><span class="pb-freq-badge freq-semanal">● Semanal (6ª)</span></td><td>Atualizar projeção de fluxo de caixa</td><td>Luana</td><td>Planilha Fluxo de Caixa</td></tr>
+          <tr><td><span class="pb-freq-badge freq-mensal">● Mensal (1–5)</span></td><td>Fechamento de documentos para contabilidade (dia 01–15 do mês seguinte)</td><td>Luana</td><td>Drive 49 + Onvio</td></tr>
+          <tr><td><span class="pb-freq-badge freq-mensal">● Mensal (1–5)</span></td><td>Emissão de NFs de clientes B2C (quinzenal, a cada 15 dias)</td><td>Luana / Rafael</td><td>Asaas</td></tr>
+          <tr><td><span class="pb-freq-badge freq-mensal">● Mensal (dia 15)</span></td><td>Controle de cartão de crédito e conciliação completa</td><td>Luana</td><td>Conta Azul</td></tr>
+          <tr><td><span class="pb-freq-badge freq-mensal">● Mensal</span></td><td>Book do Conselho: KPIs e pauta</td><td>Luana</td><td>Planilha</td></tr>
+          <tr><td><span class="pb-freq-badge freq-semestral">● Semestral</span></td><td>Campanha de cobranças antigas negativadas</td><td>Luana / Rafael</td><td>Asaas</td></tr>
+          <tr><td><span class="pb-freq-badge freq-pontual">● Pontual</span></td><td>Orçamentos e compras</td><td>Luana</td><td>Planilha / Fornecedores</td></tr>
+          <tr><td><span class="pb-freq-badge freq-pontual">● Pontual</span></td><td>Controle e renovação de domínios</td><td>Luana</td><td>Registro.br</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pb-divider"></div>
+
+    <!-- 4. CONTAS A PAGAR -->
+    <div class="pb-section">
+      <div class="pb-section-header">
+        <span class="pb-section-label">04</span>
+        <span class="pb-section-title">Contas a Pagar — Passo a Passo</span>
+      </div>
+      <div class="pb-steps">
+        <div class="pb-step-card">
+          <div class="pb-step-num">1</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Receber a fatura ou boleto do fornecedor</div>
+            <div class="pb-step-desc">Chegou por e-mail ou WhatsApp — salvar o comprovante antes de qualquer ação.</div>
+            <span class="pb-step-tool">📧 E-mail / WhatsApp</span>
+          </div>
+        </div>
+        <div class="pb-step-card">
+          <div class="pb-step-num">2</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Cadastrar o lançamento no Conta Azul com vencimento correto</div>
+            <div class="pb-step-desc">Categorizar corretamente e anexar o documento. Fazer no mesmo dia do recebimento.</div>
+            <span class="pb-step-tool">🔵 Conta Azul</span>
+          </div>
+        </div>
+        <div class="pb-step-card">
+          <div class="pb-step-num">3</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Verificar saldo disponível nos bancos antes do pagamento</div>
+            <div class="pb-step-desc">Conferir Unicred, Inter e Itaú. Pagamentos acima de R$ 5.000 comunicar ao Leandro antes de efetivar.</div>
+            <span class="pb-step-tool">🏦 App Bancário + Conta Azul</span>
+          </div>
+        </div>
+        <div class="pb-step-card">
+          <div class="pb-step-num">4</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Efetuar o pagamento pelo banco correto</div>
+            <div class="pb-step-desc">Na data de vencimento. Preferência pelo banco com maior saldo disponível.</div>
+            <span class="pb-step-tool">🏦 Unicred / Inter / Itaú</span>
+          </div>
+        </div>
+        <div class="pb-step-card">
+          <div class="pb-step-num">5</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Baixar o pagamento no Conta Azul e anexar comprovante</div>
+            <div class="pb-step-desc">Imediatamente após o pagamento. Nunca deixar pendente para o dia seguinte.</div>
+            <span class="pb-step-tool">🔵 Conta Azul</span>
+          </div>
+        </div>
+        <div class="pb-step-card">
+          <div class="pb-step-num">6</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Conciliar com o extrato bancário</div>
+            <div class="pb-step-desc">Verificar que o lançamento no Conta Azul bate com o extrato do banco. Corrigir divergências.</div>
+            <span class="pb-step-tool">🔵 Conta Azul</span>
+          </div>
+        </div>
+        <div class="pb-step-card">
+          <div class="pb-step-num">7</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Arquivar NF e comprovante no Drive 49</div>
+            <div class="pb-step-desc">Mensal, no fechamento. Pasta organizada por mês e categoria.</div>
+            <span class="pb-step-tool">📁 Drive 49</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pb-divider"></div>
+
+    <!-- 5. CONTAS A RECEBER -->
+    <div class="pb-section">
+      <div class="pb-section-header">
+        <span class="pb-section-label">05</span>
+        <span class="pb-section-title">Contas a Receber — Régua de Cobrança</span>
+      </div>
+      <div class="pb-regua">
+        <div class="pb-regua-row">
+          <div class="pb-regua-day">D+0</div>
+          <div class="pb-regua-action">Emitir cobrança (boleto, Pix ou cartão) para o cliente</div>
+          <div class="pb-regua-tool">Asaas</div>
+        </div>
+        <div class="pb-regua-row">
+          <div class="pb-regua-day">D+1</div>
+          <div class="pb-regua-action">Notificação automática via Asaas (WhatsApp / e-mail)</div>
+          <div class="pb-regua-tool">Asaas</div>
+        </div>
+        <div class="pb-regua-row">
+          <div class="pb-regua-day">D+3</div>
+          <div class="pb-regua-action">Contato ativo: WhatsApp pessoal com mensagem cordial</div>
+          <div class="pb-regua-tool">WhatsApp / E-mail</div>
+        </div>
+        <div class="pb-regua-row">
+          <div class="pb-regua-day">D+7</div>
+          <div class="pb-regua-action">Segunda tentativa de contato + oferta de negociação</div>
+          <div class="pb-regua-tool">WhatsApp / E-mail</div>
+        </div>
+        <div class="pb-regua-row">
+          <div class="pb-regua-day">D+15</div>
+          <div class="pb-regua-action">Aviso formal de pendência + alerta SERASA via Asaas (avisar cliente com 3 dias de antecedência)</div>
+          <div class="pb-regua-tool">Asaas</div>
+        </div>
+        <div class="pb-regua-row">
+          <div class="pb-regua-day">D+30</div>
+          <div class="pb-regua-action">Avaliação de negativação no SERASA — comunicar Leandro antes</div>
+          <div class="pb-regua-tool">Asaas + Leandro</div>
+        </div>
+        <div class="pb-regua-row">
+          <div class="pb-regua-day">+90 dias</div>
+          <div class="pb-regua-action">Incluir na campanha semestral de cobranças antigas</div>
+          <div class="pb-regua-tool">Asaas (semestral)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pb-divider"></div>
+
+    <!-- 6. REGRAS -->
+    <div class="pb-section">
+      <div class="pb-section-header">
+        <span class="pb-section-label">06</span>
+        <span class="pb-section-title">Regras de Registro</span>
+      </div>
+      <div class="pb-rules-grid">
+        <div class="pb-rule-card">
+          <div class="pb-rule-title">💳 Cartão de Crédito</div>
+          <ul class="pb-rule-list">
+            <li>Lançar sempre na data da compra; o vencimento deve ser a data da fatura do cartão</li>
+            <li>Revisar gastos recorrentes e pontuais todo dia 5</li>
+            <li>Conciliar com fatura no Conta Azul mensalmente</li>
+            <li>Caju Benefícios: aparece normalmente no extrato bancário</li>
+          </ul>
+        </div>
+        <div class="pb-rule-card">
+          <div class="pb-rule-title">🧾 Notas Fiscais</div>
+          <ul class="pb-rule-list">
+            <li>Emitir NF quinzenalmente antes de registrar os recebimentos no Conta Azul (a cada 15 dias, conforme ciclo do Asaas)</li>
+            <li>NFs B2C emitidas via Asaas quinzenalmente (a cada 15 dias), conforme os recebimentos do Asaas</li>
+            <li>Arquivar no Drive 49 e na Conta Azul na pasta do mês correspondente</li>
+            <li>Enviar ao Onvio do dia 01 ao dia 15 do mês subsequente</li>
+          </ul>
+        </div>
+        <div class="pb-rule-card">
+          <div class="pb-rule-title">🔄 Conciliação Bancária</div>
+          <ul class="pb-rule-list">
+            <li>Taxas bancárias automáticas: sempre lançar no Conta Azul</li>
+            <li>Conciliação diária ao final de cada dia útil</li>
+            <li>Conciliação semanal toda sexta-feira</li>
+            <li>Fechamento mensal completo do dia 01 ao dia 15 do mês subsequente</li>
+          </ul>
+        </div>
+        <div class="pb-rule-card">
+          <div class="pb-rule-title">⚡ Aprovações Necessárias</div>
+          <ul class="pb-rule-list">
+            <li>Todos os pagamentos passam por aprovação do Leandro nos bancos</li>
+            
+            <li>Despesas pontuais (viagens, eventos): incluir na planilha assim que aprovadas</li>
+            <li>Compras e contratos novos → análise jurídica via Drive 49</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pb-divider"></div>
+
+    <!-- 7. LINKS ÚTEIS -->
+    <div class="pb-section">
+      <div class="pb-section-header">
+        <span class="pb-section-label">07</span>
+        <span class="pb-section-title">Links Úteis</span>
+      </div>
+      <div class="pb-links-grid">
+        <a class="pb-link-card" href="#" target="_blank">
+          <span class="pb-link-icon">📊</span>
+          <div>
+            <div class="pb-link-name">Planilha Fluxo de Caixa</div>
+            <div class="pb-link-sub">Google Sheets — projeção anual</div>
+          </div>
+        </a>
+        <a class="pb-link-card" href="https://app.contaazul.com" target="_blank">
+          <span class="pb-link-icon">🔵</span>
+          <div>
+            <div class="pb-link-name">Conta Azul</div>
+            <div class="pb-link-sub">ERP financeiro principal</div>
+          </div>
+        </a>
+        <a class="pb-link-card" href="https://www.asaas.com/login" target="_blank">
+          <span class="pb-link-icon">🟠</span>
+          <div>
+            <div class="pb-link-name">Asaas</div>
+            <div class="pb-link-sub">Cobranças e faturamento B2C</div>
+          </div>
+        </a>
+        <a class="pb-link-card" href="#" target="_blank">
+          <span class="pb-link-icon">📁</span>
+          <div>
+            <div class="pb-link-name">Drive 49</div>
+            <div class="pb-link-sub">Documentos, NFs e contratos</div>
+          </div>
+        </a>
+        <a class="pb-link-card" href="https://registro.br" target="_blank">
+          <span class="pb-link-icon">🌐</span>
+          <div>
+            <div class="pb-link-name">Registro.br</div>
+            <div class="pb-link-sub">Controle de domínios</div>
+          </div>
+        </a>
+        <a class="pb-link-card" href="https://onvio.com.br" target="_blank">
+          <span class="pb-link-icon">📬</span>
+          <div>
+            <div class="pb-link-name">Onvio</div>
+            <div class="pb-link-sub">Portal da contabilidade</div>
+          </div>
+        </a>
+        <a class="pb-link-card" href="https://app.clicksign.com" target="_blank">
+          <span class="pb-link-icon">✍️</span>
+          <div>
+            <div class="pb-link-name">ClickSign</div>
+            <div class="pb-link-sub">Assinaturas digitais</div>
+          </div>
+        </a>
+        <a class="pb-link-card" href="#" target="_blank">
+          <span class="pb-link-icon">📋</span>
+          <div>
+            <div class="pb-link-name">Playbook Financeiro .docx</div>
+            <div class="pb-link-sub">Versão completa para download</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /pb-main -->
+</div><!-- /page-main -->
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE: ENTRADAS
+═══════════════════════════════════════════ -->
+<div id="page-entradas" class="pb-page">
+  <div class="pb-main">
+    <div class="pb-inner-header">
+      <button class="pb-back-btn" onclick="showPage('main')">← Voltar ao Playbook</button>
+      <div class="pb-inner-title">💰 <span class="pb-grad-text">Entradas</span></div>
+    </div>
+
+    <div class="pb-alert">
+      <span class="pb-alert-icon">💡</span>
+      <div class="pb-alert-text"><strong>Regra principal:</strong> toda entrada deve ser lançada no Conta Azul no mesmo dia do recebimento, com a NF correspondente emitida antes do registro.</div>
+    </div>
+
+    <div class="pb-section">
+      <div class="pb-section-header">
+        <span class="pb-section-label">Categorias</span>
+        <span class="pb-section-title">Tipos de Receita</span>
+      </div>
+      <div class="pb-cats-grid">
+        <div class="pb-cat-card">
+          <div class="pb-cat-title" style="color:#f97316!important">🎓 B2C — Alunos</div>
+          <ul class="pb-cat-list">
+            <li>Matrículas e rematrículas</li>
+            <li>Mensalidades recorrentes</li>
+            <li>Cursos avulsos / pontuais</li>
+            <li>Multas por atraso de pagamento</li>
+          </ul>
+        </div>
+        <div class="pb-cat-card">
+          <div class="pb-cat-title" style="color:#60a5fa!important">🏢 B2B — Empresas</div>
+          <ul class="pb-cat-list">
+            <li>Contratos corporativos</li>
+            <li>Licenças de plataforma</li>
+            <li>Projetos e consultorias</li>
+            <li>Patrocínios e parcerias</li>
+          </ul>
+        </div>
+        <div class="pb-cat-card">
+          <div class="pb-cat-title" style="color:#4ade80!important">💼 Outras Receitas</div>
+          <ul class="pb-cat-list">
+            <li>Rendimentos de investimentos</li>
+            <li>Estornos e devoluções recebidas</li>
+            <li>Acordos e renegociações</li>
+          </ul>
+        </div>
+        <div class="pb-cat-card">
+          <div class="pb-cat-title" style="color:#c084fc!important">📋 Campos Obrigatórios</div>
+          <ul class="pb-cat-list">
+            <li>Data do recebimento (não do vencimento)</li>
+            <li>Categoria correta no Conta Azul</li>
+            <li>Número da NF vinculado</li>
+            <li>Conta bancária de destino</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pb-section">
+      <div class="pb-section-header">
+        <span class="pb-section-label">Passo a Passo</span>
+        <span class="pb-section-title">Como Registrar uma Entrada</span>
+      </div>
+      <div class="pb-steps">
+        <div class="pb-step-card">
+          <div class="pb-step-num">1</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Confirmar o recebimento no banco</div>
+            <div class="pb-step-desc">Verificar no app do banco (Unicred, Inter ou Itaú) que o valor foi creditado na conta correta.</div>
+          </div>
+        </div>
+        <div class="pb-step-card">
+          <div class="pb-step-num">2</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Emitir a NF correspondente no Asaas (B2C)</div>
+            <div class="pb-step-desc">Para clientes B2C: emitir NF via Asaas antes de lançar no Conta Azul. Para B2B: confirmar NF do contrato.</div>
+          </div>
+        </div>
+        <div class="pb-step-card">
+          <div class="pb-step-num">3</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Lançar a entrada no Conta Azul</div>
+            <div class="pb-step-desc">Categorizar corretamente, vincular a NF e definir a conta bancária de destino. Fazer no mesmo dia.</div>
+          </div>
+        </div>
+        <div class="pb-step-card">
+          <div class="pb-step-num">4</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Conciliar com o extrato bancário</div>
+            <div class="pb-step-desc">Na conciliação diária ou semanal: confirmar que o lançamento bate com o crédito no extrato.</div>
+          </div>
+        </div>
+        <div class="pb-step-card">
+          <div class="pb-step-num">5</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Atualizar a planilha de fluxo de caixa</div>
+            <div class="pb-step-desc">Na sexta-feira: confirmar a entrada como "realizada" na planilha anual de fluxo de caixa.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE: SAÍDAS
+═══════════════════════════════════════════ -->
+<div id="page-saidas" class="pb-page">
+  <div class="pb-main">
+    <div class="pb-inner-header">
+      <button class="pb-back-btn" onclick="showPage('main')">← Voltar ao Playbook</button>
+      <div class="pb-inner-title">💸 <span class="pb-grad-text">Saídas</span></div>
+    </div>
+
+    <div class="pb-alert">
+      <span class="pb-alert-icon">⚠️</span>
+      <div class="pb-alert-text"><strong>Aprovação necessária:</strong> pagamentos acima de <strong>R$ 5.000</strong> precisam de validação do Leandro (CEO) antes de serem efetivados.</div>
+    </div>
+
+    <div class="pb-section">
+      <div class="pb-section-header">
+        <span class="pb-section-label">Categorias</span>
+        <span class="pb-section-title">Tipos de Despesa</span>
+      </div>
+      <div class="pb-cats-grid">
+        <div class="pb-cat-card">
+          <div class="pb-cat-title" style="color:#f97316!important">👥 Pessoal</div>
+          <ul class="pb-cat-list">
+            <li>Folha de pagamento da equipe</li>
+            <li>Caju Benefícios (vale refeição/alimentação)</li>
+            <li>Bradesco Saúde (plano de saúde)</li>
+            <li>Contas pessoais do Leandro (CEO)</li>
+          </ul>
+        </div>
+        <div class="pb-cat-card">
+          <div class="pb-cat-title" style="color:#60a5fa!important">🏢 Fornecedores e Serviços</div>
+          <ul class="pb-cat-list">
+            <li>Plataformas e softwares (SaaS)</li>
+            <li>Serviços de marketing e agências</li>
+            <li>Consultoria jurídica e contabilidade</li>
+            <li>Infraestrutura tecnológica</li>
+          </ul>
+        </div>
+        <div class="pb-cat-card">
+          <div class="pb-cat-title" style="color:#4ade80!important">⚙️ Operacional</div>
+          <ul class="pb-cat-list">
+            <li>Domínios (Registro.br)</li>
+            <li>Viagens (Uber Business, passagens)</li>
+            <li>Eventos e hospedagens</li>
+            <li>Compras de itens e materiais</li>
+          </ul>
+        </div>
+        <div class="pb-cat-card">
+          <div class="pb-cat-title" style="color:#c084fc!important">📋 Regras de Lançamento</div>
+          <ul class="pb-cat-list">
+            <li>Cartão de crédito: lançar no vencimento da fatura</li>
+            <li>Despesas pontuais: lançar assim que aprovadas</li>
+            <li>Sempre anexar comprovante no Conta Azul</li>
+            <li>Arquivar NF no Drive 49 no fechamento mensal</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pb-section">
+      <div class="pb-section-header">
+        <span class="pb-section-label">Passo a Passo</span>
+        <span class="pb-section-title">Como Registrar uma Saída</span>
+      </div>
+      <div class="pb-steps">
+        <div class="pb-step-card">
+          <div class="pb-step-num">1</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Receber a fatura ou boleto</div>
+            <div class="pb-step-desc">Salvar o documento antes de qualquer ação. E-mail ou WhatsApp → Drive 49 se necessário.</div>
+          </div>
+        </div>
+        <div class="pb-step-card">
+          <div class="pb-step-num">2</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Verificar aprovação (se necessário)</div>
+            <div class="pb-step-desc">Valores acima de R$ 5.000: comunicar Leandro via WhatsApp e aguardar OK antes de prosseguir.</div>
+          </div>
+        </div>
+        <div class="pb-step-card">
+          <div class="pb-step-num">3</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Cadastrar lançamento no Conta Azul</div>
+            <div class="pb-step-desc">Categoria correta, data de vencimento, conta bancária de pagamento e anexo do documento.</div>
+          </div>
+        </div>
+        <div class="pb-step-card">
+          <div class="pb-step-num">4</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Verificar saldo e efetuar o pagamento</div>
+            <div class="pb-step-desc">Conferir saldo disponível (Unicred, Inter, Itaú) e pagar pelo banco com maior liquidez.</div>
+          </div>
+        </div>
+        <div class="pb-step-card">
+          <div class="pb-step-num">5</div>
+          <div class="pb-step-content">
+            <div class="pb-step-title">Baixar pagamento e conciliar</div>
+            <div class="pb-step-desc">Registrar a baixa no Conta Azul e conciliar com o extrato bancário imediatamente.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE: CHECKLIST
+═══════════════════════════════════════════ -->
+<div id="page-checklist" class="pb-page">
+  <div class="pb-main">
+    <div class="pb-inner-header">
+      <button class="pb-back-btn" onclick="showPage('main')">← Voltar ao Playbook</button>
+      <div class="pb-inner-title">✅ <span class="pb-grad-text">Checklist Mensal</span></div>
+    </div>
+
+    <div class="pb-alert">
+      <span class="pb-alert-icon">📋</span>
+      <div class="pb-alert-text">Clique nos itens para marcá-los como concluídos. O checklist reseta ao recarregar a página.</div>
+    </div>
+
+    <div class="pb-section">
+      <div class="pb-section-header">
+        <span class="pb-section-label">Rotina</span>
+        <span class="pb-section-title">Tarefas do Mês</span>
+      </div>
+      <div class="pb-checklist">
+        <div class="pb-check-item" onclick="toggleCheck(this)">
+          <div class="pb-check-box"></div>
+          <div class="pb-check-label">Lançar pagamentos e recebimentos no Conta Azul</div>
+          <span class="pb-check-when">Diário</span>
+        </div>
+        <div class="pb-check-item" onclick="toggleCheck(this)">
+          <div class="pb-check-box"></div>
+          <div class="pb-check-label">Conciliar lançamentos com extrato bancário</div>
+          <span class="pb-check-when">Diário</span>
+        </div>
+        <div class="pb-check-item" onclick="toggleCheck(this)">
+          <div class="pb-check-box"></div>
+          <div class="pb-check-label">Verificar cobranças vencidas no Asaas e acionar clientes</div>
+          <span class="pb-check-when">Diário</span>
+        </div>
+        <div class="pb-check-item" onclick="toggleCheck(this)">
+          <div class="pb-check-box"></div>
+          <div class="pb-check-label">Revisar contas a pagar da semana</div>
+          <span class="pb-check-when">Toda segunda</span>
+        </div>
+        <div class="pb-check-item" onclick="toggleCheck(this)">
+          <div class="pb-check-box"></div>
+          <div class="pb-check-label">Revisar contas a receber + atualizar fluxo de caixa</div>
+          <span class="pb-check-when">Toda sexta</span>
+        </div>
+        <div class="pb-check-item" onclick="toggleCheck(this)">
+          <div class="pb-check-box"></div>
+          <div class="pb-check-label">Emitir NFs B2C no Asaas (quinzenal)</div>
+          <span class="pb-check-when">Quinzenal</span>
+        </div>
+        <div class="pb-check-item" onclick="toggleCheck(this)">
+          <div class="pb-check-box"></div>
+          <div class="pb-check-label">Fechar documentos contábeis (NFs, extratos, cartão) e enviar ao Onvio (do dia 01 ao dia 15 do mês subsequente)</div>
+          <span class="pb-check-when">Dia 1–5</span>
+        </div>
+        <div class="pb-check-item" onclick="toggleCheck(this)">
+          <div class="pb-check-box"></div>
+          <div class="pb-check-label">Revisar cartão de crédito e conciliação completa do mês anterior</div>
+          <span class="pb-check-when">Até dia 15</span>
+        </div>
+        <div class="pb-check-item" onclick="toggleCheck(this)">
+          <div class="pb-check-box"></div>
+          <div class="pb-check-label">Elaborar Book do Conselho (KPIs + pauta da reunião)</div>
+          <span class="pb-check-when">Mensal</span>
+        </div>
+        <div class="pb-check-item" onclick="toggleCheck(this)">
+          <div class="pb-check-box"></div>
+          <div class="pb-check-label">Campanha de cobranças antigas negativadas</div>
+          <span class="pb-check-when">Semestral</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  showPage('main');
+});
+
+function showPage(name) {
+  var pages = document.querySelectorAll('#pb49 .pb-page');
+  for (var i = 0; i < pages.length; i++) {
+    pages[i].style.cssText = 'display:none!important';
+    pages[i].classList.remove('pb-active');
+  }
+  var target = document.getElementById('page-' + name);
+  if (target) {
+    target.style.cssText = 'display:block!important';
+    target.classList.add('pb-active');
+  }
+  var buttons = document.querySelectorAll('#pb49 .pb-nav-btn');
+  for (var j = 0; j < buttons.length; j++) {
+    buttons[j].classList.remove('active');
+  }
+}
+
+function toggleCheck(el) {
+  el.classList.toggle('checked');
+  var box = el.querySelector('.pb-check-box');
+  if (el.classList.contains('checked')) {
+    box.style.cssText = 'background:#22c55e!important;border-color:#22c55e!important';
+    box.textContent = '✓';
+  } else {
+    box.style.cssText = '';
+    box.textContent = '';
+  }
+}
+</script>
+</div><!-- /pb49 -->
+</body>
+</html>
